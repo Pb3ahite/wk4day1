@@ -6,9 +6,10 @@ WHERE last_name = 'Wahlberg';
 
 
 --2. How many payments were made between $3.99 and $5.99?
-SELECT *
+SELECT COUNT(amount)
 FROM payment
-WHERE amount >= 3.99 OR amount <= 5.99;
+WHERE amount >= 3.99 AND amount <= 5.99;
+--(3)
 
 
 --3. What film does the store have the most of? (search in inventory)
@@ -25,6 +26,9 @@ WHERE last_name = 'William'
 --No Data
 
 --5. What store employee (get the id) sold the most rentals?
+SELECT staff_id
+FROM rental
+
 
 --6. How many different district names are there?
 SELECT COUNT(DISTINCT district) AS num_districts
@@ -49,4 +53,7 @@ WHERE last_name LIKE '%es'
 with ids between 380 and 430? (use group by and having > 250)
 
 --10. Within the film table, how many rating categories are there? And what rating has the most
-movies total?
+--movies total?
+SELECT COUNT(DISTINCT rating) AS rating_categories
+FROM film;
+--5
